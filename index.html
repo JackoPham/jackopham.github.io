@@ -350,6 +350,8 @@
         body {
           background: white;
           padding: 0;
+          font-size: 14px;
+          line-height: 1.4;
         }
 
         .container {
@@ -357,9 +359,125 @@
           border-radius: 0;
         }
 
+        .header {
+          padding: 30px 25px;
+        }
+
+        .name {
+          font-size: 2.2rem;
+        }
+
+        .content {
+          padding: 25px;
+        }
+
+        /* Prevent breaking sections */
+        .section {
+          page-break-inside: avoid;
+          break-inside: avoid;
+          margin-bottom: 25px;
+        }
+
+        .section-title {
+          page-break-after: avoid;
+          break-after: avoid;
+          margin-bottom: 15px;
+        }
+
+        /* Keep section title with its content */
+        .intro-text,
+        .objective-text,
+        .personal-statement,
+        .education-card {
+          page-break-before: avoid;
+          break-before: avoid;
+        }
+
+        /* Keep job cards together */
+        .job {
+          page-break-inside: avoid;
+          break-inside: avoid;
+          margin-bottom: 20px;
+          padding: 20px;
+        }
+
         .job:hover {
           transform: none;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Keep job header with description */
+        .job-header {
+          page-break-after: avoid;
+          break-after: avoid;
+          margin-bottom: 12px;
+        }
+
+        .job-description {
+          page-break-before: avoid;
+          break-before: avoid;
+          margin-bottom: 12px;
+        }
+
+        /* Keep project title with tech list */
+        .project {
+          page-break-inside: avoid;
+          break-inside: avoid;
+          margin-top: 12px;
+          padding: 15px;
+        }
+
+        .project-title {
+          page-break-after: avoid;
+          break-after: avoid;
+        }
+
+        .tech-list {
+          page-break-before: avoid;
+          break-before: avoid;
+        }
+
+        /* Skills grid optimization for print */
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+
+        .skill-category {
+          page-break-inside: avoid;
+          break-inside: avoid;
+          padding: 15px;
+        }
+
+        /* Reduce spacing for print */
+        .intro-text,
+        .objective-text,
+        .personal-statement {
+          padding: 20px;
+        }
+
+        .education-card {
+          padding: 20px;
+        }
+
+        /* References section */
+        .references {
+          padding: 20px;
+          page-break-before: avoid;
+          break-before: avoid;
+        }
+
+        /* Keep first job with section title */
+        .section .job:first-child {
+          page-break-before: avoid;
+          break-before: avoid;
+        }
+
+        /* Orphan and widow control */
+        p,
+        li {
+          orphans: 2;
+          widows: 2;
         }
       }
     </style>
@@ -408,20 +526,6 @@
               and continuously improving my skills. I am excited to bring my
               experience and expertise to your organization and contribute to
               the success of your team.
-            </p>
-          </div>
-        </div>
-
-        <div class="section">
-          <h2 class="section-title">📚 Objective</h2>
-          <div class="objective-text">
-            <p>
-              Aspiring to become a <strong>Technical Expert</strong>, designing
-              and overseeing complex software systems that are scalable, secure,
-              and efficient. Aiming to deliver high-quality solutions while
-              advancing technology and aligning with business goals. Seeking to
-              grow in leadership, architecture, and cutting-edge cloud-native
-              systems.
             </p>
           </div>
         </div>
@@ -762,6 +866,20 @@
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">📚 Objective</h2>
+          <div class="objective-text">
+            <p>
+              Aspiring to become a <strong>Technical Expert</strong>, designing
+              and overseeing complex software systems that are scalable, secure,
+              and efficient. Aiming to deliver high-quality solutions while
+              advancing technology and aligning with business goals. Seeking to
+              grow in leadership, architecture, and cutting-edge cloud-native
+              systems.
+            </p>
           </div>
         </div>
 
